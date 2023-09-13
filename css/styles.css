@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import 'contacto-ema.css';
+
+:root {
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-white: hsl(0, 0%, 100%);
+    --font-f-texto: 'Poppins', sans-serif;
+    --font-f-hora: 'Oxanium', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #c31432;
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    background: linear-gradient(to right, #240b36, #c31432);
+}
+
+.container {
+    min-height: 80vh;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+#dia-texto {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsla(0, 0%, 100%, 0.8);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-f-texto);
+}
+
+
+.reloj {
+    font-family: var(--font-f-hora);
+    background-color: hsla(275, 67%, 13%, 0.5);
+    border-radius: 5rem;
+    border: 10px solid hsla(350, 81%, 42%, 0.5);
+    padding: 1rem 5rem 2rem;
+    color: hsla(0, 0%, 100%, 0.8);
+    letter-spacing: 5px;
+    position: relative;
+    box-shadow: 3px 3px 5px 0 hsla(275, 67%, 13%, 0.3);
+} 
+
+.reloj span {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    font-size: 7rem;
+}
+
+.reloj span::after{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font-f-texto);
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: hsla(350, 81%, 42%);
+}
+
+#horas::after {
+    content: 'HRS';
+}
+
+#minutos::after {
+    content: 'MIN';
+}
+
+#segundos::after {
+    content: 'SEG';
+}
+
+@media screen and (max-width:730px) {
+    .container {
+        min-height: 80vh;
+    }
+
+    #dia-texto {
+        font-size: 1.2rem;
+    }
+
+    .reloj {
+        border-radius: 3.5rem;
+        border: 8px solid hsla(350, 81%, 42%, 0.5);
+        padding: 1rem 3rem 2rem;
+    }
+    .reloj span {
+        font-size: 4rem;
+    }
+
+    .reloj span::after{
+        font-size: 0.8rem;
+        bottom: -10px;
+    }
+}   
+
+@media screen and (max-width:480px) {
+    .container {
+        min-height: 80vh;
+    }
+
+    #dia-texto {
+        font-size: 0.8rem;
+    }
+
+    .reloj {
+        border-radius: 2.5rem;
+        border: 5px solid hsla(350, 81%, 42%, 0.5);
+        padding: 1rem 2rem 1.5rem;
+    }
+    .reloj span {
+        font-size: 2.2rem;
+    }
+
+    .reloj span::after{
+        font-size: 0.4rem;
+        bottom: -10px;
+    }
+}   
